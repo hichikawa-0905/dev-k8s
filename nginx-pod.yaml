@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-pod
+  labels:
+    app: test-pod
+  namespace: sock-shop
+spec:
+  selector:
+    matchLabels:
+      app: test-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test-pod
+    spec:
+      containers:
+        - name: test-pod
+          image: 616749751767.dkr.ecr.ap-northeast-1.amazonaws.com/front-end:5235c68
+          resources:
+            requests:
+              cpu: 500m
+              memory: 500Mi
+          ports:
+            - containerPort: 80
+          
