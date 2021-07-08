@@ -1,27 +1,25 @@
-apiVersion: apps/v1
+piVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-pod
+  name: php1
   labels:
-    app: test-pod
-  namespace: sock-shop
+    app: php1
 spec:
   selector:
     matchLabels:
-      app: test-pod
+      app: php1
   replicas: 1
   template:
     metadata:
       labels:
-        app: test-pod
+        app: php1
     spec:
       containers:
-        - name: test-pod
-          image: 616749751767.dkr.ecr.ap-northeast-1.amazonaws.com/front-end:5235c68
+        - name: php1
+          image: 616749751767.dkr.ecr.ap-northeast-1.amazonaws.com/dev-image:latest
           resources:
             requests:
               cpu: 500m
               memory: 500Mi
           ports:
             - containerPort: 80
-          
