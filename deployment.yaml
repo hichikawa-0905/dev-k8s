@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: php1
-          image: 616749751767.dkr.ecr.ap-northeast-1.amazonaws.com/dev-image:latest
+          image: public.ecr.aws/a3m7j2t4/dev-image:latest
           resources:
             requests:
               cpu: 500m
