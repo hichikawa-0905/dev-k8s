@@ -1,27 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: php1
+  name: rabbitmq
   labels:
-    app: php1
-    test: tsg
-    test2: tag
+    app: rabbitmq
 spec:
   selector:
     matchLabels:
-      app: php1
+      app: rabbitmq
   replicas: 1
   template:
     metadata:
       labels:
-        app: php1
+        app: rabbitmq
     spec:
       containers:
-        - name: php1
-          image: public.ecr.aws/a3m7j2t4/dev-image:latest
+        - name: rabbitmq
+          image: rabbitmq:3
           resources:
             requests:
               cpu: 500m
               memory: 500Mi
           ports:
-            - containerPort: 80
+            - containerPort: 5672
+            - containerPort: 15672

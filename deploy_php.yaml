@@ -4,8 +4,6 @@ metadata:
   name: php1
   labels:
     app: php1
-    test: tsg
-    test2: tag
 spec:
   selector:
     matchLabels:
